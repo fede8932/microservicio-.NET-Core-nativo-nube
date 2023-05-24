@@ -1,5 +1,5 @@
-apiVersion: apps/v1
 kind: Deployment
+apiVersion: apps/v1
 metadata:
   name: coupon
   labels:
@@ -18,8 +18,8 @@ spec:
     spec:
       containers:
         - name: coupon-api
-          image: {{ .Values.registry }}/coupon.api:linux-net6-coupon
-          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          image: {{ .Values.registry }}/coupon.api:linux-net6-initial
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
               protocol: TCP
